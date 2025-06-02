@@ -1,0 +1,290 @@
+
+  :root {
+    --blue: #0f4c81;
+    --green: #25d366;
+    --orange: #ff6f21;
+    --gray: #f5f5f5;
+    --text: #333;
+  }
+
+  * {
+    box-sizing: border-box;
+    scroll-margin-top: 4rem;
+  }
+  body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    overflow: hidden;
+  }
+  .snap-y {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+  }
+  .snap {
+    scroll-snap-align: start;
+    min-height: 90vh;
+    padding: 3rem 1rem;
+  }
+
+  .hero {
+    background-image: url('logos/microwave‐pattern.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .arrow-bounce {
+    animation: bounce 1.4s infinite;
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(8px); }
+    60% { transform: translateY(4px); }
+  }
+
+  .brand-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+    background-color: rgba(245, 245, 245, 0.8);
+  }
+  .brand-track {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    height: 70px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  .brand-track img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(1) brightness(0.8);
+    transition: filter 0.3s, transform 0.3s;
+  }
+  .brand-track img:hover {
+    filter: none;
+    transform: scale(1.1);
+  }
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes scroll-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .direction-left {
+    animation: scroll-left 15s linear infinite;
+  }
+  .direction-right {
+    animation: scroll-right 20s linear infinite;
+  }
+
+  .service-card img {
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  .map-frame {
+    border: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .flash-focus {
+    animation: flash 0.8s ease-in-out 2;
+  }
+  @keyframes flash {
+    0%, 100% { background: transparent; }
+    50% { background: rgba(255, 255, 0, 0.25); }
+  }
+
+  .plus-30 {
+    padding: 3rem 1rem;
+    background-color: var(--orange);
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .plus-30 .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .plus-30 h2,
+  .plus-30 p {
+    color: #fff;
+  }
+
+  #contato-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--gray);
+  }
+  .card-contato {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+    max-width: 420px;
+    width: 100%;
+    padding: 2.5rem 1.75rem 2rem;
+    text-align: center;
+    border-top: 6px solid var(--orange);
+    position: relative;
+  }
+  .card-titulo {
+    font-size: 1.55rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  .info {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+  }
+  .dot {
+    margin: 0 0.35rem;
+    color: #bbb;
+  }
+  .card-contato i.lucide {
+    font-size: 1rem;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+    color: var(--blue);
+  }
+  .btn-group-contato {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-group-contato .btn {
+    flex: 1 1 140px;
+    padding: 0.85rem 1rem;
+    font-weight: 600;
+    border-radius: 0.4rem;
+  }
+  .btn-whats {
+    background-color: var(--green);
+    border: 1px solid var(--green);
+    color: #fff;
+  }
+  .btn-whats:hover {
+    background-color: #1da851;
+    border-color: #1da851;
+  }
+  .btn-mail {
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    color: #fff;
+  }
+  .btn-mail:hover {
+    background-color: #0c3a5a;
+    border-color: #0c3a5a;
+  }
+  @media (max-width: 575.98px) {
+    .btn-group-contato .btn {
+      flex: 1 1 100%;
+    }
+  }
+
+  .trust-badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    max-width: 600px;
+    width: 100%;
+    margin: 3rem auto 0;
+  }
+  .badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .badge-item i {
+    font-size: 2.3rem;
+    color: var(--blue);
+    margin-bottom: 0.35rem;
+  }
+  .badge-item p {
+    font-size: 0.875rem;
+    margin: 0;
+    line-height: 1.25;
+    color: var(--text);
+  }
+
+  .footer-brand {
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 4rem 0 0.5rem;
+    opacity: 1;
+  }
+
+  .container-termos {
+    max-width: 800px;
+    margin: 3rem auto;
+    background: #ffffff;
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: Inter, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .container-termos h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--blue);
+  }
+  .container-termos ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .container-termos ul li {
+    margin-bottom: 0.75rem;
+  }
+  .container-termos ul li::marker {
+    color: var(--orange);
+    font-size: 1.25rem;
+  }
+  .container-termos .observacao {
+    font-size: 0.875rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  .container-termos .botao-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+  }
+  .container-termos .botao-voltar i.lucide {
+    vertical-align: middle;
+  }
+  .container-termos .botao-voltar:hover {
+    text-decoration: none;
+  }
+
